@@ -6,7 +6,7 @@
 /*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 19:12:40 by afalconi          #+#    #+#             */
-/*   Updated: 2023/12/21 20:17:40 by afalconi         ###   ########.fr       */
+/*   Updated: 2023/12/25 00:20:03 by afalconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 # define HUMANA_H
 
 #include "HumanA.hpp"
+
 
 #endif

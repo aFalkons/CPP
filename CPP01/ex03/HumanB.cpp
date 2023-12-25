@@ -6,7 +6,7 @@
 /*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 19:12:46 by afalconi          #+#    #+#             */
-/*   Updated: 2023/12/21 20:17:02 by afalconi         ###   ########.fr       */
+/*   Updated: 2023/12/25 20:24:05 by afalconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 HumanB::HumanB(std::string newName)
 {
 	this->name = newName;
+	this->weaponB = NULL;
 }
 
 HumanB::~HumanB()
@@ -24,15 +25,15 @@ HumanB::~HumanB()
 
 void	HumanB::attack(void)
 {
-	std::cout << this->name << "attacks with their" << this->weaponB.getType() << std::endl;
+	std::cout << this->name << " attacks with their " << (*(this->weaponB)).getType() << std::endl;
 }
 
 Weapon	HumanB::getWeapon(void)
 {
-	return(this->weaponB);
+	return(*(this->weaponB));
 }
 
-void	HumanB::setWeapon(Weapon newWeapon)
+void	HumanB::setWeapon(Weapon &newWeapon)
 {
-	this->weaponB = newWeapon;
+	this->weaponB = &newWeapon;
 }

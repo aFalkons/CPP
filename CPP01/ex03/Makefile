@@ -6,35 +6,39 @@
 #    By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/21 19:12:57 by afalconi          #+#    #+#              #
-#    Updated: 2023/12/21 20:16:24 by afalconi         ###   ########.fr        #
+#    Updated: 2023/12/24 15:24:37 by afalconi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CFILES =	HumanA.cpp	\
-			HumanB.cpp	\
-			main.cpp	\
-			Weapon.cpp	\
-
+CFILES = HumanA.cpp \
+         HumanB.cpp \
+         main.cpp \
+         Weapon.cpp
 
 OBJ = $(CFILES:.cpp=.o)
 
-CC = @ g++
-FLAGS = -g -Wall -Wextra -Werror -std=c++98
+CC = @g++
+FLAGS = -g -Wall -Wextra -Werror -std=c++11 -arch x86_64
 RM = rm -rf
 
-NAME = zombieHorde
+NAME = my_program
 
-name : $(NAME)
+name: $(NAME)
 
-all : $(NAME) $(NAMEB)
+all: $(NAME)
 
-$(NAME) : $(OBJ)
-	 $(CC) $(FLAGS) $(OBJ) -o $(NAME)
+$(NAME): $(OBJ)
+	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
 
-clean :
-	@ $(RM) $(OBJ)
+main.o: main.cpp HumanA.o HumanB.o
+HumanA.o: HumanA.cpp HumanA.hpp
+HumanB.o: HumanB.cpp HumanB.hpp
+Weapon.o: Weapon.cpp Weapon.hpp
 
-fclean : clean
-	@ $(RM) $(NAME)
+clean:
+	@$(RM) $(OBJ)
 
-re : fclean all
+fclean: clean
+	@$(RM) $(NAME)
+
+re: fclean all
