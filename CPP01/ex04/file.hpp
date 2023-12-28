@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   file.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/21 19:12:54 by afalconi          #+#    #+#             */
-/*   Updated: 2023/12/27 16:47:37 by afalconi         ###   ########.fr       */
+/*   Created: 2023/12/27 15:47:15 by afalconi          #+#    #+#             */
+/*   Updated: 2023/12/27 17:12:57 by afalconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.h"
-#include "HumanB.h"
-#include "Weapon.h"
+#ifndef FILE_HPP
+# define FILE_HPP
 
-int main(void)
+#include <iostream>
+#include <fstream>
+
+
+class file
 {
-	{
-		Weapon club = Weapon("giorgione");
-		HumanA bob("Bob", club);
-		bob.attack();
-		club.setType("pummolo");
-		bob.attack();
-	}
-	{
-		Weapon club = Weapon("giorgione");
-		HumanB jim("Jim");
-		jim.setWeapon(club);
-		jim.attack();
-		club.setType("pummolo");
-		jim.attack();
-	}
-	return 0;
-}
+private:
+	std::string		fileName;
+	std::fstream	*fd;
+public:
+	void			setFilename(std::string newFile);
+	std::string		getFilename(void);
+	void			setFd(std::fstream *newFd);
+	std::fstream	*getFd(void);
+	file();
+	~file();
+};
+
+#endif
+

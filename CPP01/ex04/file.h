@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   file.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/21 19:12:54 by afalconi          #+#    #+#             */
-/*   Updated: 2023/12/27 16:47:37 by afalconi         ###   ########.fr       */
+/*   Created: 2023/12/27 15:44:56 by afalconi          #+#    #+#             */
+/*   Updated: 2023/12/27 19:27:32 by afalconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.h"
-#include "HumanB.h"
-#include "Weapon.h"
+#ifndef FILE_H
+# define FILE_H
 
-int main(void)
-{
-	{
-		Weapon club = Weapon("giorgione");
-		HumanA bob("Bob", club);
-		bob.attack();
-		club.setType("pummolo");
-		bob.attack();
-	}
-	{
-		Weapon club = Weapon("giorgione");
-		HumanB jim("Jim");
-		jim.setWeapon(club);
-		jim.attack();
-		club.setType("pummolo");
-		jim.attack();
-	}
-	return 0;
-}
+#include <iostream>
+#include <iomanip>
+#include <sstream>
+#include <string>
+#include <fstream>
+#include "file.hpp"
+
+int	parser_for_1(char	*av[], file *fil, std::string *s1, std::string *s2, file *fil_out);
+int	parser_for_4(char	*av[], file *fil, std::string *s1, std::string *s2, file *fil_out);
+
+
+#endif
