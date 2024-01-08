@@ -6,14 +6,14 @@
 /*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:40:25 by afalconi          #+#    #+#             */
-/*   Updated: 2024/01/07 23:33:10 by afalconi         ###   ########.fr       */
+/*   Updated: 2024/01/08 16:31:53 by afalconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-const int       Fixed::fixed = 8;
-const int       Fixed::max = 256;
+const int	Fixed::fixed = 8;
+const int	Fixed::max = 256;
 
 // costruttori
 Fixed::Fixed()
@@ -97,4 +97,3 @@ int Fixed::toInt( void ) const
 {
 	return(this->getRawBits() >> this->fixed);
 }
-
