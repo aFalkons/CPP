@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   file.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/27 15:47:15 by afalconi          #+#    #+#             */
-/*   Updated: 2023/12/31 02:19:53 by afalconi         ###   ########.fr       */
+/*   Created: 2023/12/28 17:46:39 by afalconi          #+#    #+#             */
+/*   Updated: 2023/12/29 20:28:54 by afalconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FILE_HPP
-# define FILE_HPP
+#include "Harl.h"
 
-#include <iostream>
-#include <fstream>
-
-class file
+int main(int ac, char *av[])
 {
-private:
-	std::string		fileName;
-	std::fstream	*fd;
-public:
-	void			setFilename(std::string newFile);
-	std::string		getFilename(void);
-	void			setFd(std::fstream *newFd);
-	std::fstream	*getFd(void);
-	file();
-	~file();
-};
+	Harl		harl;
+	std::string	level;
 
-#endif
-
+	if (ac != 2)
+		return (std::cout << "Usage Error: ./Harl [command]" << std::endl, 1);
+	level = av[1];
+	harl.complain(level);
+	return (0);
+}

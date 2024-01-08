@@ -1,34 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   file.hpp                                           :+:      :+:    :+:   */
+/*   Fixed.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/27 15:47:15 by afalconi          #+#    #+#             */
-/*   Updated: 2023/12/31 02:19:53 by afalconi         ###   ########.fr       */
+/*   Created: 2024/01/02 16:40:45 by afalconi          #+#    #+#             */
+/*   Updated: 2024/01/03 02:26:35 by afalconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FILE_HPP
-# define FILE_HPP
+#ifndef FIXED_H
+# define FIXED_H
 
-#include <iostream>
-#include <fstream>
-
-class file
-{
-private:
-	std::string		fileName;
-	std::fstream	*fd;
-public:
-	void			setFilename(std::string newFile);
-	std::string		getFilename(void);
-	void			setFd(std::fstream *newFd);
-	std::fstream	*getFd(void);
-	file();
-	~file();
-};
+#include "Fixed.hpp"
 
 #endif
-

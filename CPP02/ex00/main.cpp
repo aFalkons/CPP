@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   file.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/27 15:47:15 by afalconi          #+#    #+#             */
-/*   Updated: 2023/12/31 02:19:53 by afalconi         ###   ########.fr       */
+/*   Created: 2024/01/02 16:42:03 by afalconi          #+#    #+#             */
+/*   Updated: 2024/01/02 17:39:59 by afalconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FILE_HPP
-# define FILE_HPP
+#include "Fixed.h"
 
-#include <iostream>
-#include <fstream>
-
-class file
+int main( void )
 {
-private:
-	std::string		fileName;
-	std::fstream	*fd;
-public:
-	void			setFilename(std::string newFile);
-	std::string		getFilename(void);
-	void			setFd(std::fstream *newFd);
-	std::fstream	*getFd(void);
-	file();
-	~file();
-};
+	Fixed a;
+	Fixed b(a);
+	Fixed c;
 
-#endif
+	c = b;
 
+	std::cout << a.getRawBits() << std::endl;
+	std::cout << b.getRawBits() << std::endl;
+	std::cout << c.getRawBits() << std::endl;
+	return 0;
+}

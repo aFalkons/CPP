@@ -1,34 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   file.hpp                                           :+:      :+:    :+:   */
+/*   Harl.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/27 15:47:15 by afalconi          #+#    #+#             */
-/*   Updated: 2023/12/31 02:19:53 by afalconi         ###   ########.fr       */
+/*   Created: 2023/12/28 17:46:50 by afalconi          #+#    #+#             */
+/*   Updated: 2023/12/28 17:56:29 by afalconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FILE_HPP
-# define FILE_HPP
+#ifndef HARL_H
+# define HARL_H
 
+#include "Harl.hpp"
 #include <iostream>
-#include <fstream>
 
-class file
-{
-private:
-	std::string		fileName;
-	std::fstream	*fd;
-public:
-	void			setFilename(std::string newFile);
-	std::string		getFilename(void);
-	void			setFd(std::fstream *newFd);
-	std::fstream	*getFd(void);
-	file();
-	~file();
-};
 
 #endif
-

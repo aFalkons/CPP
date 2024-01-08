@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   file.hpp                                           :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/27 15:47:15 by afalconi          #+#    #+#             */
-/*   Updated: 2023/12/31 02:19:53 by afalconi         ###   ########.fr       */
+/*   Created: 2024/01/02 16:41:56 by afalconi          #+#    #+#             */
+/*   Updated: 2024/01/03 02:26:57 by afalconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FILE_HPP
-# define FILE_HPP
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
 #include <iostream>
-#include <fstream>
 
-class file
+class Fixed
 {
 private:
-	std::string		fileName;
-	std::fstream	*fd;
+	int					num;
+	static const int	fixed;
 public:
-	void			setFilename(std::string newFile);
-	std::string		getFilename(void);
-	void			setFd(std::fstream *newFd);
-	std::fstream	*getFd(void);
-	file();
-	~file();
+	Fixed(void);
+	Fixed(const Fixed &b);
+	~Fixed();
+	Fixed& operator=(const Fixed &b);
+	int getRawBits(void) const;
+	void setRawBits(int const raw);
 };
 
 #endif
-
