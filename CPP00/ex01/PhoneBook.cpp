@@ -6,7 +6,7 @@
 /*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 14:23:59 by afalconi          #+#    #+#             */
-/*   Updated: 2023/12/20 17:12:13 by afalconi         ###   ########.fr       */
+/*   Updated: 2024/01/09 19:39:42 by afalconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,13 @@ int		PhoneBook::add(void)
 	std::string tmp;
 
 	std::cout << "inserisci numero" << contContact << std::endl;
-	getline(std::cin, tmp);
+	while(tmp.size() == 0)
+		getline(std::cin, tmp);
 	this->contact[contContact].setNumber(tmp);
 
 	std::cout << "inserisci f_name" << std::endl;
-	getline(std::cin, tmp);
+	while(tmp.size() == 0)
+		getline(std::cin, tmp);
 	this->contact[contContact].setFName(tmp);
 
 	std::cout << "inserisci l_name" << std::endl;

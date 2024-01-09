@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Fixed.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/28 17:46:39 by afalconi          #+#    #+#             */
-/*   Updated: 2023/12/29 20:28:54 by afalconi         ###   ########.fr       */
+/*   Created: 2024/01/02 16:40:45 by afalconi          #+#    #+#             */
+/*   Updated: 2024/01/09 16:28:43 by afalconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.h"
+#ifndef FIXED_H
+# define FIXED_H
 
-int main(int ac, char *av[])
-{
-	Harl		harl;
-	std::string	level;
+#include "Fixed.hpp"
+#include <unistd.h>
 
-	if (ac != 2)
-		return (std::cout << "Usage Error: ./Harl [command]" << std::endl, 1);
-	level = av[1];
-	harl.complain(level);
-	return (0);
-}
+#endif

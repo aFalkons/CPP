@@ -6,7 +6,7 @@
 /*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:40:25 by afalconi          #+#    #+#             */
-/*   Updated: 2024/01/09 19:55:52 by afalconi         ###   ########.fr       */
+/*   Updated: 2024/01/09 17:48:29 by afalconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ Fixed Fixed::operator-(const Fixed &b) const
 // ovdrload del operatrore *
 Fixed Fixed::operator*(const Fixed &b) const
 {
-	//std::cout << "questo e il *" << std::end
+	//std::cout << "questo e il *" << std::endl;
 	return(Fixed(this->toFloat() * b.toFloat()));
 }
 

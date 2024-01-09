@@ -6,14 +6,13 @@
 #    By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/25 21:50:34 by afalconi          #+#    #+#              #
-#    Updated: 2023/12/29 20:31:46 by afalconi         ###   ########.fr        #
+#    Updated: 2024/01/02 17:02:05 by afalconi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-NAME	=	harlFilter
-SRCS	=	main.cpp	\
-			Harl.cpp	\
+NAME	=	a.out
+SRCS	=	main.cpp Fixed.cpp
 
 OBJS	= $(SRCS:.cpp=.o)
 CC		= c++
