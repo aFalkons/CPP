@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.h                                            :+:      :+:    :+:   */
+/*   Point.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/02 16:40:45 by afalconi          #+#    #+#             */
-/*   Updated: 2024/02/08 18:08:29 by afalconi         ###   ########.fr       */
+/*   Created: 2024/02/08 18:00:42 by afalconi          #+#    #+#             */
+/*   Updated: 2024/02/08 18:07:09 by afalconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_H
-# define FIXED_H
+#ifndef POINT_H
+# define POINT_H
 
-#include "Fixed.hpp"
-#include <unistd.h>
+#include "Point.hpp"
+
 
 #endif

@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.h                                            :+:      :+:    :+:   */
+/*   bsp.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/02 16:40:45 by afalconi          #+#    #+#             */
-/*   Updated: 2024/02/08 18:08:29 by afalconi         ###   ########.fr       */
+/*   Created: 2024/02/08 18:00:36 by afalconi          #+#    #+#             */
+/*   Updated: 2024/02/08 19:22:05 by afalconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_H
-# define FIXED_H
+#include "Point.hpp"
 
-#include "Fixed.hpp"
-#include <unistd.h>
-
-#endif
+bool bsp( Point const a, Point const b, Point const c, Point const point)
+{
+	
+}
