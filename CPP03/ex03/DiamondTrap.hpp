@@ -1,31 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/20 17:43:57 by afalconi          #+#    #+#             */
-/*   Updated: 2024/01/10 16:56:59 by afalconi         ###   ########.fr       */
+/*   Created: 2024/02/12 04:06:42 by afalconi          #+#    #+#             */
+/*   Updated: 2024/02/12 05:53:56 by afalconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#ifndef DIAMONDTRAP_HPP
+# define DIAMONDTRAP_HPP
 
-#include <iostream>
-#include <iomanip>
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-class Zombie
+class DiamondTrap : public ScavTrap, public FragTrap
 {
 private:
 	std::string name;
 public:
-	Zombie(void);
-	~Zombie();
-	void		Announce(void);
-	std::string	getName();
-	void		setName(std::string newname);
+	DiamondTrap(std::string new_name);
+	DiamondTrap(const DiamondTrap &b);
+	~DiamondTrap();
+	DiamondTrap& operator=(const DiamondTrap &b);
+	void		whoAmI();
+	void		set_DiamondName(std::string new_name);
+	std::string	get_DiamondName(void);
 };
 
+
 #endif
+
+
+

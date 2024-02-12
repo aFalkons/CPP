@@ -6,13 +6,13 @@
 /*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 17:47:00 by afalconi          #+#    #+#             */
-/*   Updated: 2023/12/31 02:11:11 by afalconi         ###   ########.fr       */
+/*   Updated: 2024/01/10 18:24:15 by afalconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-typedef void	(Harl::*tumadre) (void);
+typedef void	(Harl::*lev) (void);
 
 void	Harl::complain( std::string level )
 {
@@ -23,14 +23,21 @@ void	Harl::complain( std::string level )
 		std::cout << "ERROR: level not found" << std::endl;
 		return ;
 	}
-	tumadre	pummolo[4];
-	pummolo[0] = &Harl::warning;
-	pummolo[1] = &Harl::debug;
-	pummolo[2] = &Harl::error;
-	pummolo[3] = &Harl::info;
+	lev	gg[4];
+	gg[0] = &Harl::warning;
+	gg[1] = &Harl::debug;
+	gg[2] = &Harl::error;
+	gg[3] = &Harl::info;
 	id = level[0] % 10 % 7;
 	switch (id)
 	{
+		case 0:
+		{
+				std::cout << "[WARNING]" << std::endl;
+				this->warning();
+				std::cout << "[ERROR]" << std::endl;
+				this->error();
+		}		break;
 		case 1:
 		{
 				std::cout << "[DEBUG]" << std::endl;
@@ -41,7 +48,12 @@ void	Harl::complain( std::string level )
 				this->warning();
 				std::cout << "[ERROR]" << std::endl;
 				this->error();
-		}       break;
+		}		break;
+		case 2:
+		{
+				std::cout << "[ERROR]" << std::endl;
+				this->error();
+		}		break;
 		case 3:
 		{
 				std::cout << "[INFO]" << std::endl;
@@ -50,19 +62,7 @@ void	Harl::complain( std::string level )
 				this->warning();
 				std::cout << "[ERROR]" << std::endl;
 				this->error();
-		}       break;
-		case 0:
-		{
-				std::cout << "[WARNING]" << std::endl;
-				this->warning();
-				std::cout << "[ERROR]" << std::endl;
-				this->error();
-		}       break;
-		case 2:
-		{
-				std::cout << "[ERROR]" << std::endl;
-				this->error();
-		}       break;
+		}		break;
 		default:
 				break;
 	}

@@ -6,13 +6,13 @@
 /*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 17:47:00 by afalconi          #+#    #+#             */
-/*   Updated: 2023/12/29 20:28:21 by afalconi         ###   ########.fr       */
+/*   Updated: 2024/01/10 18:19:54 by afalconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-typedef void	(Harl::*tumadre) (void);
+typedef void	(Harl::*lev) (void);
 
 void	Harl::complain( std::string level )
 {
@@ -23,13 +23,13 @@ void	Harl::complain( std::string level )
 		std::cout << "ERROR: level not found" << std::endl;
 		return ;
 	}
-	tumadre	pummolo[4];
-	pummolo[0] = &Harl::warning;
-	pummolo[1] = &Harl::debug;
-	pummolo[2] = &Harl::error;
-	pummolo[3] = &Harl::info;
+	lev	gg[4];
+	gg[0] = &Harl::warning;
+	gg[1] = &Harl::debug;
+	gg[2] = &Harl::error;
+	gg[3] = &Harl::info;
 	id = level[0] % 10 % 7;
-	(this->*pummolo[id])();
+	(this->*gg[id])();
 	return ;
 }
 

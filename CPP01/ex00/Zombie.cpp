@@ -6,7 +6,7 @@
 /*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 17:43:50 by afalconi          #+#    #+#             */
-/*   Updated: 2023/12/20 19:48:57 by afalconi         ###   ########.fr       */
+/*   Updated: 2024/01/10 16:57:51 by afalconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,11 @@
 Zombie::Zombie(void)
 {
 	this->name = "null";
+}
+
+Zombie::~Zombie()
+{
+	std::cout << getName() << " killed" << std::endl;
 }
 
 void		Zombie::Announce(void)

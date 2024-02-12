@@ -6,7 +6,7 @@
 /*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 17:43:57 by afalconi          #+#    #+#             */
-/*   Updated: 2023/12/20 19:29:54 by afalconi         ###   ########.fr       */
+/*   Updated: 2024/01/10 17:01:11 by afalconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ private:
 	std::string name;
 public:
 	Zombie(void);
+	~Zombie();
 	void		Announce(void);
 	std::string	getName();
 	void		setName(std::string newname);

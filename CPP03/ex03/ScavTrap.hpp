@@ -1,38 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/20 17:43:50 by afalconi          #+#    #+#             */
-/*   Updated: 2024/01/10 17:00:35 by afalconi         ###   ########.fr       */
+/*   Created: 2024/02/12 01:22:26 by afalconi          #+#    #+#             */
+/*   Updated: 2024/02/12 04:38:47 by afalconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
-Zombie::Zombie(void)
-{
-	this->name = "null";
-}
+#include "ClapTrap.hpp"
 
-Zombie::~Zombie()
+class ScavTrap : virtual public ClapTrap
 {
-	std::cout << getName() << " killed" << std::endl;
-}
+protected:
+	bool Gatekeeper;
 
-void		Zombie::Announce(void)
-{
-	std::cout << getName() << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
+public:
+	ScavTrap(std::string new_name);
+	ScavTrap(const ScavTrap &b);
+	ScavTrap& operator=(const ScavTrap &b);
+	~ScavTrap();
+	void guardGate();
+	void	set_Gatek(bool new_gatek);
+	bool	get_Gatek(void);
+};
 
-std::string	Zombie::getName(void)
-{
-	return(this->name);
-}
-
-void		Zombie::setName(std::string newname)
-{
-	this->name = newname;
-}
+#endif
