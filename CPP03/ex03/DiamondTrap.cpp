@@ -22,6 +22,16 @@ DiamondTrap::DiamondTrap(std::string new_name) : ClapTrap(new_name), ScavTrap(ne
 	std::cout << "DiamondTrap " << new_name << " is been constructed" << std::endl;
 }
 
+DiamondTrap::DiamondTrap() : ClapTrap("null"), ScavTrap("null"), FragTrap("null")
+{
+	this->set_Name("null_calp_name");
+	this->set_DiamondName("null");
+	this->set_Attack(this->ScavTrap::get_Attack());
+	this->set_Health(this->FragTrap::get_Health());
+	this->set_Energy(this->FragTrap::get_Energy());
+	std::cout << "DiamondTrap null is been constructed" << std::endl;
+}
+
 DiamondTrap::DiamondTrap(const DiamondTrap &b) : ClapTrap(b), ScavTrap(b), FragTrap(b)
 {
 	if (this != &b)

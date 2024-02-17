@@ -21,6 +21,15 @@ ClapTrap::ClapTrap(std::string new_name)
 	std::cout << "ClapTrap " << new_name << " is been constructed" << std::endl;
 }
 
+ClapTrap::ClapTrap()
+{
+	this->set_Name("null");
+	this->set_Attack(0);
+	this->set_Health(10);
+	this->set_Energy(10);
+	std::cout << "ClapTrap null is been constructed" << std::endl;
+}
+
 ClapTrap::ClapTrap(const ClapTrap &b)
 {
 	if (this != &b)

@@ -24,6 +24,7 @@ private:
 	int			energy;
 	int			attackd;
 public:
+	ClapTrap();
 	ClapTrap(std::string new_name);
 	ClapTrap(const ClapTrap &b);
 	~ClapTrap();

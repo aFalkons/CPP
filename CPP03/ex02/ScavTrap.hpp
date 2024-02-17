@@ -21,6 +21,7 @@ private:
 	bool Gatekeeper;
 
 public:
+	ScavTrap();
 	ScavTrap(std::string new_name);
 	ScavTrap(const ScavTrap &b);
 	ScavTrap& operator=(const ScavTrap &b);

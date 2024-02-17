@@ -21,6 +21,15 @@ FragTrap::FragTrap(std::string new_name) : ClapTrap(new_name)
 	std::cout << "FragTrap " << new_name << " is been constructed" << std::endl;
 }
 
+FragTrap::FragTrap() : ClapTrap("null")
+{
+	this->set_Name("null");
+	this->set_Attack(30);
+	this->set_Health(100);
+	this->set_Energy(100);
+	std::cout << "FragTrap null is been constructed" << std::endl;
+}
+
 FragTrap::FragTrap(const FragTrap &b) : ClapTrap(b)
 {
 	if (this != &b)

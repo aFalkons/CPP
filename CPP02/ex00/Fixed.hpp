@@ -6,7 +6,7 @@
 /*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:41:56 by afalconi          #+#    #+#             */
-/*   Updated: 2024/01/03 02:26:57 by afalconi         ###   ########.fr       */
+/*   Updated: 2024/02/16 09:30:05 by afalconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ public:
 	Fixed(const Fixed &b);
 	~Fixed();
 	Fixed& operator=(const Fixed &b);
-	int getRawBits(void) const;
-	void setRawBits(int const raw);
+	int		getRawBits(void) const;
+	void	setRawBits(int const raw);
 };
 
 #endif

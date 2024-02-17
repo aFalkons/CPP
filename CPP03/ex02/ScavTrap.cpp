@@ -22,6 +22,16 @@ ScavTrap::ScavTrap(std::string new_name) : ClapTrap(new_name)
 	std::cout << "ScavTrap " << new_name << " is been constructed" << std::endl;
 }
 
+ScavTrap::ScavTrap() : ClapTrap("null")
+{
+	this->set_Name("null");
+	this->set_Attack(20);
+	this->set_Health(100);
+	this->set_Energy(50);
+	this->set_Gatek(false);
+	std::cout << "ScavTrap null is been constructed" << std::endl;
+}
+
 ScavTrap::ScavTrap(const ScavTrap &b) : ClapTrap(b)
 {
 	if (this != &b)

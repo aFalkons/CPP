@@ -6,7 +6,7 @@
 /*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 02:52:57 by afalconi          #+#    #+#             */
-/*   Updated: 2024/02/16 02:59:10 by afalconi         ###   ########.fr       */
+/*   Updated: 2024/02/16 10:08:33 by afalconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ public:
 	WrongAnimal(std::string new_type);
 	std::string		getType() const;
 	void			setType(std::string new_type);
-	void	makeSound() const;
+	void			makeSound() const;
 };
 
 
