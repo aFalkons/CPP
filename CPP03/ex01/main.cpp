@@ -6,7 +6,7 @@
 /*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 08:11:38 by afalconi          #+#    #+#             */
-/*   Updated: 2024/02/12 03:24:51 by afalconi         ###   ########.fr       */
+/*   Updated: 2024/02/17 23:07:55 by afalconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,14 @@ void	action(ScavTrap *Scav1, ScavTrap *Scav2)
 	"2) repaire" << std::endl <<
 	"3) Gatekeeper mode" << std::endl;
 	std::cin>>x;
-	if (x == 1)
+	if (x == 1 && Scav2->get_Gatek() != true)
 	{
 		Scav1->attack(Scav2->get_Name());
 		Scav2->takeDamage(Scav1->get_Attack());
+	}
+	else if (x == 1 && Scav2->get_Gatek() == true)
+	{
+		std::cout << "ScavTrap : " << Scav2->get_Name() << " is in Gatekeeper mode" << std::endl;
 	}
 	else if (x == 2)
 		Scav1->beRepaired(5);

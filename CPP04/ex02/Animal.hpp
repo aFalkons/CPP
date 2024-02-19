@@ -1,34 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/12 01:22:26 by afalconi          #+#    #+#             */
-/*   Updated: 2024/02/18 00:27:08 by afalconi         ###   ########.fr       */
+/*   Created: 2024/02/15 23:12:21 by afalconi          #+#    #+#             */
+/*   Updated: 2024/02/16 08:13:50 by afalconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 
-#include "ClapTrap.hpp"
+#include	<string>
+#include	<iostream>
+#include	"Brain.hpp"
 
-class ScavTrap : public ClapTrap
+class Animal
 {
-private:
-	bool Gatekeeper;
-
+protected:
+	std::string type;
 public:
-	ScavTrap();
-	ScavTrap(std::string new_name);
-	ScavTrap(const ScavTrap &b);
-	ScavTrap& operator=(const ScavTrap &b);
-	~ScavTrap();
-	void	guardGate();
-	void	set_Gatek(bool new_gatek);
-	bool	get_Gatek(void);
+	Animal();
+	virtual ~Animal();
+	Animal& operator=(const Animal &b);
+	Animal(const Animal &b);
+	Animal(std::string new_type);
+	std::string		getType() const;
+	void			setType(std::string new_type);
+	virtual void	makeSound() const;
+	virtual Brain&	getBrain(void) const = 0;
 };
+
 
 #endif

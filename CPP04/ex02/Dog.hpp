@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/12 01:22:26 by afalconi          #+#    #+#             */
-/*   Updated: 2024/02/18 00:27:08 by afalconi         ###   ########.fr       */
+/*   Created: 2024/02/15 23:18:36 by afalconi          #+#    #+#             */
+/*   Updated: 2024/02/18 18:45:09 by afalconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef DOG_HPP
+# define DOG_HPP
 
-#include "ClapTrap.hpp"
+#include "Animal.hpp"
+#include "Brain.hpp"
 
-class ScavTrap : public ClapTrap
+
+class Dog : public Animal
 {
 private:
-	bool Gatekeeper;
+	Brain *dog_brain;
 
 public:
-	ScavTrap();
-	ScavTrap(std::string new_name);
-	ScavTrap(const ScavTrap &b);
-	ScavTrap& operator=(const ScavTrap &b);
-	~ScavTrap();
-	void	guardGate();
-	void	set_Gatek(bool new_gatek);
-	bool	get_Gatek(void);
+	Dog();
+	~Dog();
+	Dog& operator=(const Dog &b);
+	Dog(const Dog &b);
+	void		makeSound() const;
+	Brain&		getBrain() const;
 };
 
 #endif

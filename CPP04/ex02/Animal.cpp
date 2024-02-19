@@ -6,7 +6,7 @@
 /*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 23:15:09 by afalconi          #+#    #+#             */
-/*   Updated: 2024/02/18 18:36:45 by afalconi         ###   ########.fr       */
+/*   Updated: 2024/02/16 07:23:16 by afalconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,5 @@ void		Animal::setType(std::string new_type)
 
 void	Animal::makeSound() const
 {
-	std::cout << "sound" << std::endl;
+	std::cout << "bark bark" << std::endl;
 }
-

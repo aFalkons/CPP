@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/12 01:22:26 by afalconi          #+#    #+#             */
-/*   Updated: 2024/02/18 00:27:08 by afalconi         ###   ########.fr       */
+/*   Created: 2024/02/16 04:42:26 by afalconi          #+#    #+#             */
+/*   Updated: 2024/02/16 05:42:46 by afalconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
-#include "ClapTrap.hpp"
+#include	<string>
+#include	<iostream>
 
-class ScavTrap : public ClapTrap
+class Brain
 {
 private:
-	bool Gatekeeper;
-
+	std::string ideas[100];
 public:
-	ScavTrap();
-	ScavTrap(std::string new_name);
-	ScavTrap(const ScavTrap &b);
-	ScavTrap& operator=(const ScavTrap &b);
-	~ScavTrap();
-	void	guardGate();
-	void	set_Gatek(bool new_gatek);
-	bool	get_Gatek(void);
+	Brain();
+	virtual ~Brain();
+	Brain& operator=(const Brain &b);
+	Brain(const Brain &b);
+	Brain(std::string new_ideas[100]);
+	std::string	getIdea(int i) const;
+	void		setIdea(int i, std::string new_idea);
 };
 
 #endif

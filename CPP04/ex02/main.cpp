@@ -6,7 +6,7 @@
 /*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 08:11:38 by afalconi          #+#    #+#             */
-/*   Updated: 2024/02/18 18:44:23 by afalconi         ###   ########.fr       */
+/*   Updated: 2024/02/18 04:08:48 by afalconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,41 +16,28 @@
 #include "WrongCat.hpp"
 #include "Dog.hpp"
 
-// int	main(void)
-// {
-// 	Animal *animals[50];
-// 	Animal test;
-// 	for (int i = 0; i < 50; i++)
-// 	{
-// 		if (i % 2 == 0)
-// 			animals[i] = new Cat();
-// 		else
-// 			animals[i] = new Dog();
-// 	}
-// 	for (int i = 0; i < 50; i++)
-// 	{
-
-// 		if (i % 2 == 0)
-// 			(animals[i]->
-// 		else
-// 			(animals[i]->getBrain()).setIdea(i, "bone");
-// 	}
-// 	for (int i = 0; i < 50; i++)
-// 		std::cout << i << " animal idea of a : " << animals[i]->getType() << " is " << (animals[i]->getBrain()).getIdea(i) << std::endl;
-// 	for (int i = 0; i < 50; i++)
-// 		delete animals[i];
-// 	return (0);
-// }
-
-#include "Dog.hpp"
-#include "Cat.hpp"
-
-int main()
+int	main(void)
 {
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-
-	delete j;
-	delete i;
-	return 0;
+	Animal *animals[50];
+	// std::string tmp;
+	for (int i = 0; i < 50; i++)
+	{
+		if (i % 2 == 0)
+			animals[i] = new Cat();
+		else
+			animals[i] = new Dog();
+	}
+	for (int i = 0; i < 50; i++)
+	{
+		// tmp = 50 - i;
+		if (i % 2 == 0)
+			(animals[i]->getBrain()).setIdea(i,"fish");
+		else
+			(animals[i]->getBrain()).setIdea(i,"bone");
+	}
+	for (int i = 0; i < 50; i++)
+		std::cout << i << " animal idea of a : " << animals[i]->getType() << " is " << (animals[i]->getBrain()).getIdea(i) << std::endl;
+	for (int i = 0; i < 50; i++)
+		delete animals[i];
+	return (0);
 }

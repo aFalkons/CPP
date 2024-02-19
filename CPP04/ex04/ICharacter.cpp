@@ -1,34 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   ICharacter.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/12 01:22:26 by afalconi          #+#    #+#             */
-/*   Updated: 2024/02/18 00:27:08 by afalconi         ###   ########.fr       */
+/*   Created: 2024/02/18 05:10:17 by afalconi          #+#    #+#             */
+/*   Updated: 2024/02/18 05:11:44 by afalconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#include "ICharacter.hpp"
 
-#include "ClapTrap.hpp"
-
-class ScavTrap : public ClapTrap
+ICharacter::ICharacter(/* args */)
 {
-private:
-	bool Gatekeeper;
+}
 
-public:
-	ScavTrap();
-	ScavTrap(std::string new_name);
-	ScavTrap(const ScavTrap &b);
-	ScavTrap& operator=(const ScavTrap &b);
-	~ScavTrap();
-	void	guardGate();
-	void	set_Gatek(bool new_gatek);
-	bool	get_Gatek(void);
-};
-
-#endif
+ICharacter::~ICharacter()
+{
+}

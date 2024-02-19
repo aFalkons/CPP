@@ -6,7 +6,7 @@
 /*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 23:18:36 by afalconi          #+#    #+#             */
-/*   Updated: 2024/02/16 06:53:04 by afalconi         ###   ########.fr       */
+/*   Updated: 2024/02/18 18:25:21 by afalconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ public:
 	Dog& operator=(const Dog &b);
 	Dog(const Dog &b);
 	void		makeSound() const;
-	Brain&	getBrain() const;
+	Brain&		getBrain() const;
 };
 
 #endif

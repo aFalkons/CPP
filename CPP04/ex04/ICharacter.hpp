@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/12 01:22:26 by afalconi          #+#    #+#             */
-/*   Updated: 2024/02/18 00:27:08 by afalconi         ###   ########.fr       */
+/*   Created: 2024/02/18 05:10:16 by afalconi          #+#    #+#             */
+/*   Updated: 2024/02/18 18:52:20 by afalconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef ICHARACTER_HPP
+# define ICHARACTER_HPP
 
-#include "ClapTrap.hpp"
+#include <string>
+#include "AMateria.hpp"
 
-class ScavTrap : public ClapTrap
+class ICharacter
 {
-private:
-	bool Gatekeeper;
-
 public:
-	ScavTrap();
-	ScavTrap(std::string new_name);
-	ScavTrap(const ScavTrap &b);
-	ScavTrap& operator=(const ScavTrap &b);
-	~ScavTrap();
-	void	guardGate();
-	void	set_Gatek(bool new_gatek);
-	bool	get_Gatek(void);
+	virtual ~ICharacter() {}
+	virtual std::string const & getName() const = 0;
+	virtual void equip(AMateria* m) = 0;
+	virtual void unequip(int idx) = 0;
+	virtual void use(int idx, ICharacter& target) = 0;
 };
 
 #endif

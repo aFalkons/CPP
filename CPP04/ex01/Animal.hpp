@@ -6,7 +6,7 @@
 /*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 23:12:21 by afalconi          #+#    #+#             */
-/*   Updated: 2024/02/16 08:13:50 by afalconi         ###   ########.fr       */
+/*   Updated: 2024/02/18 18:36:27 by afalconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ public:
 	std::string		getType() const;
 	void			setType(std::string new_type);
 	virtual void	makeSound() const;
-	virtual Brain&	getBrain(void) const = 0;
 };
 
 
