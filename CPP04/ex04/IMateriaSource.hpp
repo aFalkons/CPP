@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.cpp                                       :+:      :+:    :+:   */
+/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/18 05:07:58 by afalconi          #+#    #+#             */
-/*   Updated: 2024/02/19 19:53:59 by afalconi         ###   ########.fr       */
+/*   Created: 2024/02/19 17:25:58 by afalconi          #+#    #+#             */
+/*   Updated: 2024/02/19 19:37:16 by afalconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef IMATERIASOURCE_HPP
+# define IMATERIASOURCE_HPP
+
 #include "AMateria.hpp"
+#include	<string>
+#include	<iostream>
 
-AMateria::AMateria(std::string const & type)
+class IMateriaSource
 {
-	this->math_type = type;
-}
+	public:
+		virtual ~IMateriaSource() {}
+		virtual void learnMateria(AMateria*) = 0;
+		virtual AMateria* createMateria(std::string const & type) = 0;
+};
 
-std::string const & AMateria::getType() const
-{
-	return(this->math_type);
-}
 
-void AMateria::use(ICharacter& target)
-{
-	std::cout << "nothing to use" << std::endl;
-}
+#endif

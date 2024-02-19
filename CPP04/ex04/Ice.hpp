@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ICharacter.cpp                                     :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/18 05:10:17 by afalconi          #+#    #+#             */
-/*   Updated: 2024/02/18 05:11:44 by afalconi         ###   ########.fr       */
+/*   Created: 2024/02/19 18:28:21 by afalconi          #+#    #+#             */
+/*   Updated: 2024/02/19 19:44:05 by afalconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ICharacter.hpp"
+#ifndef ICE_HPP
+# define ICE_HPP
 
-ICharacter::ICharacter(/* args */)
-{
-}
+#include "AMateria.hpp"
 
-ICharacter::~ICharacter()
+class Ice : public AMateria
 {
-}
+private:
+	/* data */
+public:
+	Ice(/* args */);
+	~Ice();
+	AMateria* clone() const;
+	void use(ICharacter& target);
+};
+
+#endif

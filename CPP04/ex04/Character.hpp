@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.cpp                                       :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/18 05:07:58 by afalconi          #+#    #+#             */
-/*   Updated: 2024/02/19 19:53:59 by afalconi         ###   ########.fr       */
+/*   Created: 2024/02/19 18:34:36 by afalconi          #+#    #+#             */
+/*   Updated: 2024/02/19 19:59:13 by afalconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef CHARACTER_HPP
+# define CHARACTER_HPP
+
+#include "ICharacter.hpp"
 #include "AMateria.hpp"
 
-AMateria::AMateria(std::string const & type)
+class Character : public ICharacter
 {
-	this->math_type = type;
-}
+private:
+	std::string	name;
+	;
+public:
+	Character(std::string new_name);
+	~Character();
+	std::string const &	getName() const;
+	void				equip(AMateria* m);
+	void				unequip(int idx);
+	void				use(int idx, ICharacter& target);
+	AMateria*			clone();
+};
 
-std::string const & AMateria::getType() const
-{
-	return(this->math_type);
-}
 
-void AMateria::use(ICharacter& target)
-{
-	std::cout << "nothing to use" << std::endl;
-}
+#endif
