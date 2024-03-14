@@ -6,12 +6,17 @@
 /*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 05:17:30 by afalconi          #+#    #+#             */
-/*   Updated: 2024/03/12 10:42:02 by afalconi         ###   ########.fr       */
+/*   Updated: 2024/03/14 18:45:34 by afalconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
+#include "AForm.hpp"
+
 
 int	main(void)
 {
@@ -26,21 +31,38 @@ int	main(void)
 
 	std::cout << std::endl;
 
-	Form form1("gattini e quaricini", 1120, 90);
-	std::cout << form1;
-	Form form2("contratto di condominio", 80, 90);
-	std::cout << form2;
-	Form form3("vendita armi", 10, 90);
-	std::cout << form3;
-	Form form4("11 settembre", -11092001, 90);
-	std::cout << form4;
+	ShrubberyCreationForm form1("albero1");
+	form1.execute(cinzia);
+	form1.execute(ciro);
+	form1.beSigned(ciro);
+	form1.execute(ciro);
 
 	std::cout << std::endl;
 
-	cinzia.signForm(&form2);
-	ciro.signForm(&form4);
-	beppe.signForm(&form4);
-	beppe.signForm(&form4);
+	RobotomyRequestForm form2("mcamilli");
+	form2.execute(cinzia);
+	form2.execute(ciro);
+	form2.beSigned(ciro);
+	form2.execute(ciro);
 
+	std::cout << std::endl;
+
+	PresidentialPardonForm form3("mcamilli");
+	form3.execute(cinzia);
+	form3.execute(luca);
+	form3.beSigned(luca);
+	form3.execute(luca);
+
+	std::cout << std::endl;
+
+	Intern Bobby;
+
+	Bobby.makeForm("Saint Honoré", "Marron Glacé");
+	Bobby.makeForm("Presidential pardon", "Marronee");
+	//AForm *agumina = &pippo.makeForm("ensomma", "bella");
+	//AForm *lnicoter = &pippo.makeForm("Presidential Pardon Form", "agumina");
+
+	//delete agumina;
+	//delete lnicoter;
 	return(0);
 }

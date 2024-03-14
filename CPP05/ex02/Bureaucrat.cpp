@@ -6,7 +6,7 @@
 /*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 05:17:41 by afalconi          #+#    #+#             */
-/*   Updated: 2024/03/12 10:38:54 by afalconi         ###   ########.fr       */
+/*   Updated: 2024/03/12 19:35:58 by afalconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,7 @@ void		Bureaucrat::burDec()
 	}
 }
 
-void		Bureaucrat::signForm(Form *f)
+void		Bureaucrat::signForm(AForm *f)
 {
 	try
 	{
@@ -130,3 +130,17 @@ void		Bureaucrat::signForm(Form *f)
 		std::cerr <<  this->getName() << " couldn’t sign " << (*f).getName()  << " because " << e.what() << std::endl;
 	}
 }
+
+void Bureaucrat::executeForm(AForm const & form)
+{
+	try
+	{
+		form.execute(*this);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+
+}
+

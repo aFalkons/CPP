@@ -6,13 +6,19 @@
 #    By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/25 21:50:34 by afalconi          #+#    #+#              #
-#    Updated: 2024/03/11 17:48:32 by afalconi         ###   ########.fr        #
+#    Updated: 2024/03/14 18:31:37 by afalconi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME	=	a.out
-SRCS	=	main.cpp Bureaucrat.cpp Form.cpp
+SRCS	=	main.cpp \
+			Bureaucrat.cpp \
+			AForm.cpp \
+			ShrubberyCreationForm.cpp \
+			RobotomyRequestForm.cpp \
+			PresidentialPardonForm.cpp \
+			Intern.cpp
 
 OBJS	= $(SRCS:.cpp=.o)
 CC		= c++

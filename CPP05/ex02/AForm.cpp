@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.cpp                                           :+:      :+:    :+:   */
+/*   AAForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 16:36:14 by afalconi          #+#    #+#             */
-/*   Updated: 2024/03/12 10:41:47 by afalconi         ###   ########.fr       */
+/*   Updated: 2024/03/12 11:09:49 by afalconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
+#include "AForm.hpp"
 
-Form::Form(std::string new_name, int min_grade_sig, int min_grade_exe): name(new_name), sig(false) , siggrade(min_grade_sig > 150 || min_grade_sig < 1 ? min_grade_sig > 150 ? 150 : 1 : min_grade_sig), exegrade(min_grade_exe > 150 || min_grade_exe < 1 ? min_grade_exe > 150 ? 150 : 1 : min_grade_exe)
+AForm::AForm(std::string new_name, int min_grade_sig, int min_grade_exe): name(new_name), sig(false) , siggrade(min_grade_sig > 150 || min_grade_sig < 1 ? min_grade_sig > 150 ? 150 : 1 : min_grade_sig), exegrade(min_grade_exe > 150 || min_grade_exe < 1 ? min_grade_exe > 150 ? 150 : 1 : min_grade_exe)
 {
 	try
 	{
 		if (min_grade_sig < 1)
 		{
-			throw(Form::GradeTooHighException());
+			throw(AForm::GradeTooHighException());
 		}
 		else if (min_grade_sig > 150)
 		{
-			throw(Form::GradeTooLowException());
+			throw(AForm::GradeTooLowException());
 		}
 		else if (min_grade_exe < 1)
 		{
-			throw(Form::GradeTooHighException());
+			throw(AForm::GradeTooHighException());
 		}
 		else if (min_grade_sig > 150)
 		{
-			throw(Form::GradeTooLowException());
+			throw(AForm::GradeTooLowException());
 		}
 	}
 	catch(const std::exception& e)
@@ -39,53 +39,53 @@ Form::Form(std::string new_name, int min_grade_sig, int min_grade_exe): name(new
 	}
 }
 
-Form::~Form()
+AForm::~AForm()
 {
 
 }
 
-Form::Form(const Form &b): name(b.getName()), sig(b.getSig()), siggrade(b.getSigGrade()), exegrade(b.getExeGrade())
+AForm::AForm(const AForm &b): name(b.getName()), sig(b.getSig()), siggrade(b.getSigGrade()), exegrade(b.getExeGrade())
 {
 
 }
 
-Form&	Form::operator=(const Form &b)
+AForm&	AForm::operator=(const AForm &b)
 {
 	this->setSig(b.getSig());
 	return(*this);
 }
 
-std::string	Form::getName() const
+std::string	AForm::getName() const
 {
 	return(this->name);
 }
 
-void		Form::setName(std::string new_name)
+void		AForm::setName(std::string new_name)
 {
 	this->name = new_name;
 }
 
-bool		Form::getSig() const
+bool		AForm::getSig() const
 {
 	return(this->sig);
 }
 
-void		Form::setSig(bool new_Sig)
+void		AForm::setSig(bool new_Sig)
 {
 	this->sig = new_Sig;
 }
 
-int			Form::getSigGrade() const
+int			AForm::getSigGrade() const
 {
 	return(this->siggrade);
 }
 
-int			Form::getExeGrade() const
+int			AForm::getExeGrade() const
 {
 	return(this->exegrade);
 }
 
-std::ostream&	operator<<(std::ostream &stream, const Form &b)
+std::ostream&	operator<<(std::ostream &stream, const AForm &b)
 {
 	stream << "name : " << b.getName()
 	<< " grade required to sign it : " << b.getSigGrade()
@@ -97,13 +97,12 @@ std::ostream&	operator<<(std::ostream &stream, const Form &b)
 	return(stream);
 }
 
-void	Form::beSigned(Bureaucrat dkhead)
+void	AForm::beSigned(Bureaucrat dkhead)
 {
 	if (dkhead.getGrade() > this->getSigGrade())
-		throw(Form::GradeTooLowException());
+		throw(AForm::GradeTooLowException());
 	else if (this->getSig() == true)
-		throw(Form::FormAlreadySigned());
+		throw(AForm::AFormAlreadySigned());
 	else
 		this->setSig(true);
-
 }

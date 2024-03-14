@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 16:36:10 by afalconi          #+#    #+#             */
-/*   Updated: 2024/03/12 10:30:56 by afalconi         ###   ########.fr       */
+/*   Updated: 2024/03/12 16:02:48 by afalconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-# define FORM_HPP
+#ifndef AFORM_HPP
+# define AFORM_HPP
 
 #include	"Bureaucrat.hpp"
 
 class Bureaucrat;
 
-class Form
+class AForm
 {
 private:
 	std::string	name;
@@ -26,10 +26,10 @@ private:
 	const int	exegrade;
 public:
 	//OCF
-	Form(std::string new_name, int min_grade_sig, int min_grade_exe);
-	~Form();
-	Form(const Form &b);
-	Form&	operator=(const Form &b);
+	AForm(std::string new_name, int min_grade_sig, int min_grade_exe);
+	~AForm();
+	AForm(const AForm &b);
+	AForm&	operator=(const AForm &b);
 
 	//getter_sette
 	std::string	getName() const;
@@ -47,7 +47,7 @@ public:
 		public:
 		const char* what() const throw()
 		{
-			return("Form Err : Grade Too High");
+			return("AForm Err : Grade Too High");
 		}
 	};
 
@@ -56,24 +56,34 @@ public:
 		public:
 		const char* what() const throw()
 		{
-			return("Form Err : Grade Too Low");
+			return("AForm Err : Grade Too Low");
 		}
 	};
 
-	class FormAlreadySigned : public std::exception
+	class AFormAlreadySigned : public std::exception
 	{
 		public:
 		const char* what() const throw()
 		{
-			return("Form Err : Form Already Signed");
+			return("AForm Err : AForm Already Signed");
+		}
+	};
+
+	class AFormIsNotSigned : public std::exception
+	{
+		public:
+		const char* what() const throw()
+		{
+			return("AForm Err : AForm Is Not Signed");
 		}
 	};
 
 	//function
 	void	beSigned(Bureaucrat dkhead);
+	virtual void execute(Bureaucrat const & executor) const = 0;
 };
 
-std::ostream&	operator<<(std::ostream &stream, const Form &b);
+std::ostream&	operator<<(std::ostream &stream, const AForm &b);
 
 
 #endif

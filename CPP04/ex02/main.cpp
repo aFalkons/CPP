@@ -6,7 +6,7 @@
 /*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 08:11:38 by afalconi          #+#    #+#             */
-/*   Updated: 2024/02/18 04:08:48 by afalconi         ###   ########.fr       */
+/*   Updated: 2024/03/13 16:40:47 by afalconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 
 int	main(void)
 {
+	
 	Animal *animals[50];
 	// std::string tmp;
 	for (int i = 0; i < 50; i++)

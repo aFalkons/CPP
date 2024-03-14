@@ -6,7 +6,7 @@
 /*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 05:17:32 by afalconi          #+#    #+#             */
-/*   Updated: 2024/03/12 10:39:09 by afalconi         ###   ########.fr       */
+/*   Updated: 2024/03/12 19:29:01 by afalconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 #include	<string>
 #include	<iostream>
 #include	<stdexcept>
-#include	"Form.hpp"
+#include	"AForm.hpp"
 
-class Form;
+class AForm;
 
 class Bureaucrat
 {
@@ -62,7 +62,8 @@ public:
 	//function
 	void		burInc();
 	void		burDec();
-	void		signForm(Form *f);
+	void		signForm(AForm *f);
+	void		executeForm(AForm const & form);
 };
 
 std::ostream&	operator<<(std::ostream &stream, const Bureaucrat &b);
