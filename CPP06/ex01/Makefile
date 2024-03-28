@@ -6,13 +6,13 @@
 #    By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/25 21:50:34 by afalconi          #+#    #+#              #
-#    Updated: 2024/03/28 08:42:51 by afalconi         ###   ########.fr        #
+#    Updated: 2024/03/15 17:21:16 by afalconi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME	=	a.out
-SRCS	= main.cpp ScalarConverter.cpp ScalarConverterGetSet.cpp
+SRCS	= main.cpp
 GETSET	=	"char ConvChar ScalarConverter" \
 			"int ConvInt ScalarConverter" \
 			"float ConvFloat ScalarConverter" \
@@ -21,7 +21,7 @@ GETSET	=	"char ConvChar ScalarConverter" \
 
 OBJS	= $(SRCS:.cpp=.o)
 CC		= c++
-FLAGS	= -std=c++98 -Wall -Werror -Wextra -Wno-shadow -Wshadow
+FLAGS	= -std=c++98 -arch x86_64 -Wall -Werror -Wextra -Wno-shadow -Wshadow
 RM		= rm -rf
 
 %.o: %.cpp

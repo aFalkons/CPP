@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Serializer.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/14 19:01:00 by afalconi          #+#    #+#             */
-/*   Updated: 2024/03/28 09:32:43 by afalconi         ###   ########.fr       */
+/*   Created: 2024/03/27 18:19:09 by afalconi          #+#    #+#             */
+/*   Updated: 2024/03/27 18:30:22 by afalconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#ifndef SERIALIZER_HPP
+# define SERIALIZER_HPP
 
-int main(int ac, char **av)
+#include <stdint.h>
+
+class Serializer
 {
-	if (ac != 2)
-		return(1);
-	std::string str = av[1];
-	ScalarConverter b(str);
-	return(0);
-}
+private:
+	/* data */
+public:
+	Serializer(/* args */);
+	~Serializer();
+	Serializer(const Serializer &b);
+	Serializer&	operator=(const Serializer &b);
+
+	uintptr_t serialize(Data* ptr);
+	Data* deserialize(uintptr_t raw);
+};
+
+#endif
+
