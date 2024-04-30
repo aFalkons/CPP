@@ -88,12 +88,12 @@ int			AForm::getExeGrade() const
 std::ostream&	operator<<(std::ostream &stream, const AForm &b)
 {
 	stream << "name : " << b.getName()
-	<< " grade required to sign it : " << b.getSigGrade()
-	<< " grade required to execute it: " << b.getExeGrade();
+	<< std::endl << "grade required to sign it : " << b.getSigGrade()
+	<< std::endl << "grade required to execute it: " << b.getExeGrade() << std::endl ;
 	if (b.getSig() == false)
-		stream << " nobody is signed" << std::endl;
+		stream << "nobody is signed" << std::endl;
 	else
-		stream << " sumbody is signed" << std::endl;
+		stream << "sumbody is signed" << std::endl;
 	return(stream);
 }
 

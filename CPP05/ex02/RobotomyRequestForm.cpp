@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 10:47:52 by afalconi          #+#    #+#             */
-/*   Updated: 2024/03/13 17:02:17 by afalconi         ###   ########.fr       */
+/*   Updated: 2024/04/30 17:50:31 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ std::string	RobotomyRequestForm::getTarget() const
 
 void	RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
-		try
+	try
 	{
 		if (executor.getGrade() > this->getExeGrade())
 			throw(AForm::GradeTooLowException());

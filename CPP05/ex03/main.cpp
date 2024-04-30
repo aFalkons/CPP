@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 05:17:30 by afalconi          #+#    #+#             */
-/*   Updated: 2024/03/14 18:45:34 by afalconi         ###   ########.fr       */
+/*   Updated: 2024/04/30 17:58:39 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,12 +57,8 @@ int	main(void)
 
 	Intern Bobby;
 
-	Bobby.makeForm("Saint Honoré", "Marron Glacé");
-	Bobby.makeForm("Presidential pardon", "Marronee");
-	//AForm *agumina = &pippo.makeForm("ensomma", "bella");
-	//AForm *lnicoter = &pippo.makeForm("Presidential Pardon Form", "agumina");
+	Bobby.makeForm("ensomma", "dajeromadaje");
+	Bobby.makeForm("Presidential pardon", "");
 
-	//delete agumina;
-	//delete lnicoter;
 	return(0);
 }

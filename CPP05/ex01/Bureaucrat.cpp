@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 05:17:41 by afalconi          #+#    #+#             */
-/*   Updated: 2024/03/12 10:38:54 by afalconi         ###   ########.fr       */
+/*   Updated: 2024/04/30 17:31:18 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,12 @@ Bureaucrat::Bureaucrat(std::string	new_name, int new_grade)
 	{
 		this->setGrade(new_grade);
 	}
-	catch(Bureaucrat::GradeTooHighException e)
+	catch(Bureaucrat::GradeTooHighException &e)
 	{
 		this->setGrade(1);
 		std::cout << e.what() << std::endl;
 	}
-	catch(Bureaucrat::GradeTooLowException e)
+	catch(Bureaucrat::GradeTooLowException &e)
 	{
 		this->setGrade(150);
 		std::cout << e.what() << std::endl;
@@ -98,7 +98,7 @@ void		Bureaucrat::burInc()
 	{
 		this->setGrade(this->getGrade() - 1);
 	}
-	catch(Bureaucrat::GradeTooHighException e)
+	catch(Bureaucrat::GradeTooHighException &e)
 	{
 		this->setGrade(1);
 		std::cout << e.what() << std::endl;
@@ -111,7 +111,7 @@ void		Bureaucrat::burDec()
 	{
 		this->setGrade(this->getGrade() + 1);
 	}
-	catch(Bureaucrat::GradeTooLowException e)
+	catch(Bureaucrat::GradeTooLowException &e)
 	{
 		this->setGrade(150);
 		std::cout << e.what() << std::endl;

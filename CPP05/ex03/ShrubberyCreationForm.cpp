@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 10:46:43 by afalconi          #+#    #+#             */
-/*   Updated: 2024/03/13 17:28:47 by afalconi         ###   ########.fr       */
+/*   Updated: 2024/04/30 17:55:17 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,15 @@ std::string	ShrubberyCreationForm::getTarget() const
 
 void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
+	std::string tmp;
 	try
 	{
 		if (executor.getGrade() > this->getExeGrade())
 			throw(AForm::GradeTooLowException());
 		else if (this->getSig() == false)
 			throw(AForm::AFormIsNotSigned());
-		std::ofstream	file(this->target + "_shrubbery" );
+		tmp = this->target + "_shrubbery";
+		std::ofstream	file(tmp.c_str());
 		file << "                                                         ." << std::endl;
 		file << "                                              .         ;" << std::endl;
 		file << "                 .              .              ;%     ;;" << std::endl;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 16:36:14 by afalconi          #+#    #+#             */
-/*   Updated: 2024/03/12 10:41:47 by afalconi         ###   ########.fr       */
+/*   Updated: 2024/04/30 17:39:02 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,12 +88,13 @@ int			Form::getExeGrade() const
 std::ostream&	operator<<(std::ostream &stream, const Form &b)
 {
 	stream << "name : " << b.getName()
-	<< " grade required to sign it : " << b.getSigGrade()
-	<< " grade required to execute it: " << b.getExeGrade();
+	<< std::endl << "grade required to sign it : " << b.getSigGrade()
+	<< std::endl << "grade required to execute it: " << b.getExeGrade()
+	<< std::endl ;
 	if (b.getSig() == false)
-		stream << " nobody is signed" << std::endl;
+		stream << "nobody is signed" << std::endl;
 	else
-		stream << " sumbody is signed" << std::endl;
+		stream << "sumbody is signed" << std::endl;
 	return(stream);
 }
 
