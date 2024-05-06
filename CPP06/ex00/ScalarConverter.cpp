@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 19:01:33 by afalconi          #+#    #+#             */
-/*   Updated: 2024/03/28 09:30:35 by afalconi         ###   ########.fr       */
+/*   Updated: 2024/05/05 19:59:30 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,53 @@
 
 #include "ScalarConverter.hpp"
 
+void	ScalarConverter::ckforprint(int c)
+{
+	if (c < 32 || c > 127)
+		throw(ScalarConverter::ScalarCharNotDisplay());
+	this->setConvChar((char)(c));
+}
+
+void	ScalarConverter::ForConv(std::string str, int flag)
+{
+	std::istringstream iss(str);
+    double tmp;
+
+	if (!(iss >> tmp))
+		throw(ScalarConverter::ScalarImpossibleConverter());
+	if (flag == 0)
+	{
+		if (tmp >= 0 && tmp <= std::numeric_limits<char>::max())
+			this->setConvChar((char)static_cast<int>(tmp));
+		else
+			throw(ScalarConverter::ScalarImpossibleConverter());
+	}
+	else if (flag == 1)
+	{
+		this->setConvInt(static_cast<int>(tmp));
+	}
+	else if (flag == 2)
+	{
+		this->setConvFloat(static_cast<float>(tmp));
+	}
+	else if (flag == 3)
+	{
+		this->setConvDouble(tmp);
+	}
+}
+
 ScalarConverter::ScalarConverter(std::string str)
 {
 	std::cout << "char : ";
 	try
 	{
-		ForConvChar(str);
-		std::cout << "\'" <<  this->getConvChar() << "\'" << std::endl;
+		if (str.size() == 1)
+			this->ckforprint(static_cast<int>(str[0]));
+		else if (str.size() == 3 && (str[0] == 39 || str[0] == 34) && (str[2] == 39 || str[2] == 34) )
+			this->ckforprint(static_cast<int>(str[1]));
+		else
+			ForConv(str, 0);
+		std::cout << this->getConvChar() << std::endl;
 	}
 	catch(const std::exception& e)
 	{
@@ -33,7 +73,12 @@ ScalarConverter::ScalarConverter(std::string str)
 	std::cout << "int : ";
 	try
 	{
-		ForConvInt(str);
+		if (str.size() == 1)
+			this->setConvInt(static_cast<int>(str[0]));
+		else if (str.size() == 3 && (str[0] == 39 || str[0] == 34) && (str[2] == 39 || str[2] == 34) )
+			this->setConvInt(static_cast<int>(str[1]));
+		else
+			ForConv(str, 1);
 		std::cout << this->getConvInt() << std::endl;
 	}
 	catch(const std::exception& e)
@@ -43,7 +88,12 @@ ScalarConverter::ScalarConverter(std::string str)
 	std::cout << "float : ";
 	try
 	{
-		ForConvFloat(str);
+		if (str.size() == 1)
+			this->setConvFloat(static_cast<float>(str[0]));
+		else if (str.size() == 3 && (str[0] == 39 || str[0] == 34) && (str[2] == 39 || str[2] == 34) )
+			this->setConvFloat(static_cast<float>(str[1]));
+		else
+			ForConv(str, 2);
 		if (this->getConvFloat() == (int)this->getConvFloat())
 			std::cout << this->getConvFloat() << ".0f" <<  std::endl;
 		else
@@ -56,7 +106,12 @@ ScalarConverter::ScalarConverter(std::string str)
 	std::cout << "double : ";
 	try
 	{
-		ForConvDouble(str);
+		if (str.size() == 1)
+			this->setConvDouble(static_cast<double>(str[0]));
+		else if (str.size() == 3 && (str[0] == 39 || str[0] == 34) && (str[2] == 39 || str[2] == 34) )
+			this->setConvDouble(static_cast<double>(str[1]));
+		else
+			ForConv(str, 3);
 		if (this->getConvDouble() == (int)this->getConvDouble())
 			std::cout << this->getConvDouble() << ".0" <<  std::endl;
 		else
@@ -85,45 +140,4 @@ ScalarConverter&	ScalarConverter::operator=(const ScalarConverter &b)
 	this->setConvFloat(b.getConvFloat());
 	this->setConvInt(b.getConvInt());
 	return(*this);
-}
-
-void		ScalarConverter::ForConvChar(std::string newConvChar)
-{
-
-	if (newConvChar.size() == 1 && !std::isdigit(newConvChar[0]))
-		this->setConvChar(newConvChar[0]);
-	else
-	{
-		int tmp = atoi(newConvChar.c_str());
-		if ((tmp == 0 && newConvChar != "0") || tmp < 0)
-			throw ScalarImpossibleConverter();
-		else if (tmp < 32 || tmp > 127)
-			throw ScalarCharNotDisplay();
-		else
-			this->setConvChar(tmp);
-	}
-}
-
-void	ScalarConverter::ForConvInt(std::string newConvint)
-{
-	float i = atof(newConvint.c_str());
-	if (i == 0 && newConvint[0] != '0')
-		throw ScalarConverter::ScalarImpossibleConverter();
-	this->setConvInt((int)i);
-}
-
-void		ScalarConverter::ForConvFloat(std::string newConvFloat)
-{
-	float i = std::atof(newConvFloat.c_str());
-	if (i == 0 && newConvFloat[0] != '0')
-		throw ScalarConverter::ScalarImpossibleConverter();
-	this->setConvFloat(i);
-}
-
-void		ScalarConverter::ForConvDouble(std::string newConvDouble)
-{
-	double i = (double)std::atof(newConvDouble.c_str());
-	if (i == 0 && newConvDouble[0] != '0')
-		throw ScalarConverter::ScalarImpossibleConverter();
-	this->setConvDouble(i);
 }

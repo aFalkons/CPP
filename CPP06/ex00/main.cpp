@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 19:01:00 by afalconi          #+#    #+#             */
-/*   Updated: 2024/03/28 09:32:43 by afalconi         ###   ########.fr       */
+/*   Updated: 2024/05/05 18:46:16 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,16 @@
 
 int main(int ac, char **av)
 {
-	if (ac != 2)
-		return(1);
-	std::string str = av[1];
-	ScalarConverter b(str);
-	return(0);
+	if (ac != 2) {
+		std::cout << "Usage: ./convert [value]" << std::endl;
+		return 1;
+	}
+	try {
+		std::cout << "________ "<< av[1] << " ________" << std::endl;
+		ScalarConverter b(av[1]);
+		std::cout << "______________________" << std::endl;
+	}
+	catch (std::exception &e) {
+		std::cout << e.what() << std::endl;
+	}
 }

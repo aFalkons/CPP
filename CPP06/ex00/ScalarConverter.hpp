@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 19:01:31 by afalconi          #+#    #+#             */
-/*   Updated: 2024/03/28 09:36:55 by afalconi         ###   ########.fr       */
+/*   Updated: 2024/05/05 19:45:33 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,10 @@ public:
 	void		setConvDouble(double newConvdouble);
 
 	// funzioni
-	void		ForConvInt(std::string newConvint);
-	void		ForConvChar(std::string newConvChar);
-	void		ForConvFloat(std::string newConvFloat);
-	void		ForConvDouble(std::string newConvDouble);
+	void		ckforprint(int c);
+	void		ForConv(std::string str, int flag);
 
-
-	class ScalarImpossibleConverter : public std::exception
+    class ScalarImpossibleConverter : public std::exception
 	{
 		public:
 		const char* what() const throw()
@@ -95,7 +92,6 @@ public:
 		}
 	};
 };
-
 
 #endif
 
