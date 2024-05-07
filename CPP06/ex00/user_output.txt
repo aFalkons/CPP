@@ -81,20 +81,20 @@ ______________________$
 ________ +inff ________$
 char : impossible$
 int : impossible$
-float : +inff$
-double : +inf$
+float : +inf$
+double : +inff$
 ______________________$
 ________ -inff ________$
 char : impossible$
 int : impossible$
-float : -inff$
-double : -inf$
+float : -inf$
+double : -inff$
 ______________________$
 ________ nanf ________$
 char : impossible$
 int : impossible$
-float : nanf$
-double : nan$
+float : nan$
+double : nanf$
 ______________________$
 Testing with literal double
 ________ 0.0 ________$
@@ -118,20 +118,20 @@ ______________________$
 ________ +inf ________$
 char : impossible$
 int : impossible$
-float : +inff$
-double : +inf$
+float : +inf$
+double : +inff$
 ______________________$
 ________ -inf ________$
 char : impossible$
 int : impossible$
-float : -inff$
-double : -inf$
+float : -inf$
+double : -inff$
 ______________________$
 ________ nan ________$
-impossible$
+char : impossible$
 int : impossible$
-float : nanf$
-double : nan$
+float : nan$
+double : nanf$
 ______________________$
 Testing with empty string
 ________  ________$

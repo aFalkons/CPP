@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: root <root@student.42.fr>                  +#+  +:+       +#+         #
+#    By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/25 21:50:34 by afalconi          #+#    #+#              #
-#    Updated: 2024/04/30 17:32:29 by root             ###   ########.fr        #
+#    Updated: 2024/05/07 16:42:24 by afalconi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME	=	a.out
-SRCS	= main.cpp
+SRCS	= main.cpp Serializer.cpp
 GETSET	=	"char ConvChar ScalarConverter" \
 			"int ConvInt ScalarConverter" \
 			"float ConvFloat ScalarConverter" \
@@ -21,7 +21,7 @@ GETSET	=	"char ConvChar ScalarConverter" \
 
 OBJS	= $(SRCS:.cpp=.o)
 CC		= c++
-FLAGS	= -std=c++98   -Wall -Werror -Wextra -Wno-shadow -Wshadow
+FLAGS	= -std=c++98 -Wall -Werror -Wextra -Wno-shadow -Wshadow
 RM		= rm -rf
 
 %.o: %.cpp

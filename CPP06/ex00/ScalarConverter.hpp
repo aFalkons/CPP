@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 19:01:31 by afalconi          #+#    #+#             */
-/*   Updated: 2024/05/07 14:21:32 by root             ###   ########.fr       */
+/*   Updated: 2024/05/07 15:57:41 by afalconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ private:
 	float		ConvFloat;
 	double		ConvDouble;
 public:
-	ScalarConverter(std::string str);
+	ScalarConverter();
 	~ScalarConverter();
 	ScalarConverter(const ScalarConverter &b);
 	ScalarConverter&	operator=(const ScalarConverter &b);
@@ -48,6 +48,7 @@ public:
 	void		setConvDouble(double newConvdouble);
 
 	// funzioni
+	void		convert(std::string str);
 	void		ckforprint(int c);
 	void		ForConv(std::string str, int flag);
 

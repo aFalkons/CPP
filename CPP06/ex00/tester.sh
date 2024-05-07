@@ -56,7 +56,7 @@ echo "Testing with literal float" >> $user_output
 ./a.out nanf | cat -e >> $user_output
 
 echo "Testing with literal double" >> $user_output
-
+2
 ./a.out 0.0 | cat -e >> $user_output
 
 ./a.out -42.42 | cat -e >> $user_output
@@ -86,3 +86,6 @@ echo "Testing with 2 arguments" >> $user_output
 ./a.out "Hello" "World" | cat -e >> $user_output
 
 make fclean
+
+# tester by everonel
+

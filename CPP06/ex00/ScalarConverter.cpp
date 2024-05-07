@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 19:01:33 by afalconi          #+#    #+#             */
-/*   Updated: 2024/05/07 14:31:03 by root             ###   ########.fr       */
+/*   Updated: 2024/05/07 15:56:41 by afalconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ScalarConverter::ckforprint(int c)
 void	ScalarConverter::ForConv(std::string str, int flag)
 {
 	std::istringstream iss(str);
-    double tmp;
+	double tmp;
 
 	if (!(iss >> tmp))
 		throw(ScalarConverter::ScalarImpossibleConverter());
@@ -46,9 +46,26 @@ void	ScalarConverter::ForConv(std::string str, int flag)
 	}
 }
 
-ScalarConverter::ScalarConverter(std::string str)
+static void errMessage(const char *err, int f)
 {
-	if (str.compare("nan"))
+	if (err == std::string("Scalar Err : Not A Numebr"))
+		std::cout << "nan";
+	else if (err == std::string("Scalar Err : Number Minus Infinity"))
+		std::cout << "-inf";
+	else if (err == std::string("Scalar Err : Number Plus Infinity"))
+		std::cout << "+inf";
+	else
+	{
+		std::cout << "impossible" << std::endl;
+		return ;
+	}
+	if (f == 0)
+		std::cout << "f";
+	std::cout << std::endl;
+}
+
+void ScalarConverter::convert(std::string str)
+{
 	std::cout << "char : ";
 	try
 	{
@@ -105,14 +122,7 @@ ScalarConverter::ScalarConverter(std::string str)
 	}
 	catch(const std::exception& e)
 	{
-		if (e.what() == std::string("Scalar Err : Not A Numebr"))
-			std::cout << "nanf" << std::endl;
-		else if (e.what() == std::string("Scalar Err : Number Minus Infinity"))
-			std::cout << "-inff" << std::endl;
-		else if (e.what() == std::string("Scalar Err : Number Plus Infinity"))
-			std::cout << "+inff" << std::endl;
-		else
-			std::cout << "impossible" << std::endl;
+		errMessage(e.what(), 1);
 	}
 	std::cout << "double : ";
 	try
@@ -136,15 +146,16 @@ ScalarConverter::ScalarConverter(std::string str)
 	}
 	catch(const std::exception& e)
 	{
-		if (e.what() == std::string("Scalar Err : Not A Numebr"))
-			std::cout << "nan" << std::endl;
-		else if (e.what() == std::string("Scalar Err : Number Minus Infinity"))
-			std::cout << "-inf" << std::endl;
-		else if (e.what() == std::string("Scalar Err : Number Plus Infinity"))
-			std::cout << "+inf" << std::endl;
-		else
-			std::cout << "impossible" << std::endl;
+		errMessage(e.what(), 0);
 	}
+}
+
+ScalarConverter::ScalarConverter()
+{
+	this->setConvChar(0);
+	this->setConvInt(0);
+	this->setConvFloat(0);
+	this->setConvDouble(0);
 }
 
 ScalarConverter::~ScalarConverter()

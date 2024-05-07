@@ -6,18 +6,29 @@
 /*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 19:01:00 by afalconi          #+#    #+#             */
-/*   Updated: 2024/05/07 16:05:09 by afalconi         ###   ########.fr       */
+/*   Updated: 2024/05/07 17:29:07 by afalconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#include "Serializer.hpp"
 
-int main(int ac, char **av)
+int	main(void)
 {
-	ScalarConverter b;
-	if (ac != 2)
-		return 1;
-	std::cout << "________ "<< av[1] << " ________" << std::endl;
-	b.convert(av[1]);
-	std::cout << "______________________" << std::endl;
+	Serializer	tmp;
+	Data	base;
+	Data	*ck;
+
+	uintptr_t	serial;
+
+	base.i = 42;
+	base.f = 42.42f;
+	base.d = 42.42;
+	base.c = '*';
+
+	std::cout << "original address : " << &base << std::endl;
+	serial = tmp.serialize(&base);
+
+	ck = tmp.deserialize(serial);
+	std::cout << "old address : " << &base << " --- new address :" << ck << std::endl;
+	return (0);
 }
