@@ -48,7 +48,7 @@ float : 48.0f$
 double : 48.0$
 ______________________$
 ________ -42 ________$
-char : impossible$
+char : Non displayable$
 int : -42$
 float : -42.0f$
 double : -42.0$
@@ -61,13 +61,13 @@ double : 42.0$
 ______________________$
 Testing with literal float
 ________ 0.0f ________$
-char : ^@$
+char : Non displayable$
 int : 0$
 float : 0.0f$
 double : 0.0$
 ______________________$
 ________ -42.42f ________$
-char : impossible$
+char : Non displayable$
 int : -42$
 float : -42.42f$
 double : -42.42$
@@ -81,30 +81,30 @@ ______________________$
 ________ +inff ________$
 char : impossible$
 int : impossible$
-float : impossible$
-double : impossible$
+float : +inff$
+double : +inf$
 ______________________$
 ________ -inff ________$
 char : impossible$
 int : impossible$
-float : impossible$
-double : impossible$
+float : -inff$
+double : -inf$
 ______________________$
 ________ nanf ________$
 char : impossible$
 int : impossible$
-float : impossible$
-double : impossible$
+float : nanf$
+double : nan$
 ______________________$
 Testing with literal double
 ________ 0.0 ________$
-char : ^@$
+char : Non displayable$
 int : 0$
 float : 0.0f$
 double : 0.0$
 ______________________$
 ________ -42.42 ________$
-char : impossible$
+char : Non displayable$
 int : -42$
 float : -42.42f$
 double : -42.42$
@@ -118,20 +118,20 @@ ______________________$
 ________ +inf ________$
 char : impossible$
 int : impossible$
-float : impossible$
-double : impossible$
+float : +inff$
+double : +inf$
 ______________________$
 ________ -inf ________$
 char : impossible$
 int : impossible$
-float : impossible$
-double : impossible$
+float : -inff$
+double : -inf$
 ______________________$
 ________ nan ________$
-char : impossible$
+impossible$
 int : impossible$
-float : impossible$
-double : impossible$
+float : nanf$
+double : nan$
 ______________________$
 Testing with empty string
 ________  ________$

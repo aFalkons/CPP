@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 19:01:33 by afalconi          #+#    #+#             */
-/*   Updated: 2024/05/05 19:59:30 by root             ###   ########.fr       */
+/*   Updated: 2024/05/07 14:31:03 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,7 @@ void	ScalarConverter::ForConv(std::string str, int flag)
 		throw(ScalarConverter::ScalarImpossibleConverter());
 	if (flag == 0)
 	{
-		if (tmp >= 0 && tmp <= std::numeric_limits<char>::max())
-			this->setConvChar((char)static_cast<int>(tmp));
-		else
-			throw(ScalarConverter::ScalarImpossibleConverter());
+		this->ckforprint(static_cast<int>(tmp));
 	}
 	else if (flag == 1)
 	{
@@ -51,6 +48,7 @@ void	ScalarConverter::ForConv(std::string str, int flag)
 
 ScalarConverter::ScalarConverter(std::string str)
 {
+	if (str.compare("nan"))
 	std::cout << "char : ";
 	try
 	{
@@ -88,7 +86,13 @@ ScalarConverter::ScalarConverter(std::string str)
 	std::cout << "float : ";
 	try
 	{
-		if (str.size() == 1)
+		if (str == "+inff" || str == "+inf")
+			throw(ScalarConverter::ScalarPlusInf());
+		else if (str == "-inff" || str == "-inf")
+			throw(ScalarConverter::ScalarMinusInf());
+		else if (str == "nanf" || str == "nan")
+			throw(ScalarConverter::ScalarNotANumebr());
+		else if (str.size() == 1)
 			this->setConvFloat(static_cast<float>(str[0]));
 		else if (str.size() == 3 && (str[0] == 39 || str[0] == 34) && (str[2] == 39 || str[2] == 34) )
 			this->setConvFloat(static_cast<float>(str[1]));
@@ -101,12 +105,25 @@ ScalarConverter::ScalarConverter(std::string str)
 	}
 	catch(const std::exception& e)
 	{
-		std::cout << "impossible" << std::endl;
+		if (e.what() == std::string("Scalar Err : Not A Numebr"))
+			std::cout << "nanf" << std::endl;
+		else if (e.what() == std::string("Scalar Err : Number Minus Infinity"))
+			std::cout << "-inff" << std::endl;
+		else if (e.what() == std::string("Scalar Err : Number Plus Infinity"))
+			std::cout << "+inff" << std::endl;
+		else
+			std::cout << "impossible" << std::endl;
 	}
 	std::cout << "double : ";
 	try
 	{
-		if (str.size() == 1)
+		if (str == "+inff" || str == "+inf")
+			throw(ScalarConverter::ScalarPlusInf());
+		else if (str == "-inff" || str == "-inf")
+			throw(ScalarConverter::ScalarMinusInf());
+		else if (str == "nanf" || str == "nan")
+			throw(ScalarConverter::ScalarNotANumebr());
+		else if (str.size() == 1)
 			this->setConvDouble(static_cast<double>(str[0]));
 		else if (str.size() == 3 && (str[0] == 39 || str[0] == 34) && (str[2] == 39 || str[2] == 34) )
 			this->setConvDouble(static_cast<double>(str[1]));
@@ -119,7 +136,14 @@ ScalarConverter::ScalarConverter(std::string str)
 	}
 	catch(const std::exception& e)
 	{
-		std::cout << "impossible" << std::endl;
+		if (e.what() == std::string("Scalar Err : Not A Numebr"))
+			std::cout << "nan" << std::endl;
+		else if (e.what() == std::string("Scalar Err : Number Minus Infinity"))
+			std::cout << "-inf" << std::endl;
+		else if (e.what() == std::string("Scalar Err : Number Plus Infinity"))
+			std::cout << "+inf" << std::endl;
+		else
+			std::cout << "impossible" << std::endl;
 	}
 }
 
