@@ -6,13 +6,12 @@
 /*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 16:09:38 by afalconi          #+#    #+#             */
-/*   Updated: 2024/05/07 16:44:31 by afalconi         ###   ########.fr       */
+/*   Updated: 2024/05/08 13:45:38 by afalconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DATA_H
 # define DATA_H
-
 
 typedef struct Data {
 	char	c;

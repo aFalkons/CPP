@@ -1,0 +1,76 @@
+//this is a snippet file so you can easily create classes in the Orthodox Canonical Form
+{
+    "Generic Class in HPP": {
+        "prefix": "classhpp",
+        "body": [
+            "#ifndef ${TM_FILENAME_BASE}_HPP",
+            "#define ${TM_FILENAME_BASE}_HPP",
+            "",
+            "class ${TM_FILENAME_BASE}",
+            "{",
+            "public:",
+            "    // Constructor",
+            "    ${TM_FILENAME_BASE}();",
+            "",
+            "    // Destructor",
+            "    ~${TM_FILENAME_BASE}();",
+            "",
+            "    // Copy Constructor",
+            "    ${TM_FILENAME_BASE}(const ${TM_FILENAME_BASE}& other);",
+            "",
+            "    // Assignment Operator Overload",
+            "    ${TM_FILENAME_BASE}& operator=(const ${TM_FILENAME_BASE}& other);",
+            "};",
+            "",
+            "#endif /* ${TM_FILENAME_BASE}_HPP */"
+        ],
+        "description": "Create a generic class in a .hpp file with constructor, destructor, copy constructor, and assignment operator overload using the file name as class name"
+    },
+    "Class CPP with Include": {
+        "prefix": "classcpp",
+        "body": [
+            "#include \"${TM_FILENAME_BASE}.hpp\"",
+            "",
+            "${TM_FILENAME_BASE}::${TM_FILENAME_BASE}()",
+			"{",
+            "    // Constructor implementation",
+            "}",
+            "",
+            "${TM_FILENAME_BASE}::~${TM_FILENAME_BASE}()",
+			"{",
+			"    // Destructor implementation",
+            "}",
+            "",
+            "${TM_FILENAME_BASE}::${TM_FILENAME_BASE}(const ${TM_FILENAME_BASE}& other)",
+            "{",
+			"    // Copy constructor implementation",
+            "}",
+            "",
+            "${TM_FILENAME_BASE}& ${TM_FILENAME_BASE}::operator=(const ${TM_FILENAME_BASE}& other)",
+			"{",
+            "    if (this == &other) {",
+            "        return *this;",
+            "    }",
+            "    // Assignment operator implementation",
+            "    return *this;",
+            "}"
+        ],
+        "description": "Create a .cpp file with include for the class and implement constructor, destructor, copy constructor, and assignment operator"
+    }
+}
+//    ___
+//   /   \
+//  /     \
+// | |\ /| |
+// | || || |
+// | || || |
+// | |/ \| |
+//  \     /
+// \ \   / /
+//  \ \ / /
+//   \   /
+//    \ /
+//     X
+//    / \
+//   /   \
+//  /     \
