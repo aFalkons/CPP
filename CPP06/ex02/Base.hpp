@@ -22,6 +22,8 @@ public:
 
 	virtual void display() const;
 	Base *generate();
+	void identify(Base* p);
+	void identify(Base& p);
 };
 
 #endif /* Base_HPP */

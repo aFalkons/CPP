@@ -26,5 +26,5 @@ C& C::operator=(const C& other)
 
 void C::display() const
 {
-	std::cout << "this is the A class" << std::endl;
+	std::cout << "this is the C class" << std::endl;
 }

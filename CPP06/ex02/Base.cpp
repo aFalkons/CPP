@@ -35,11 +35,8 @@ void Base::display() const
 
 Base *Base::generate()
 {
-	int choice = time(0) % 3; // Randomly choose between 0, 1, or 2
+	int choice = time(0) % 3;
 
-
-
-	std::cout << choice << " ---- " << time(0) << std::endl;
 	switch (choice) {
 		case 0:
 			return new A();
@@ -50,4 +47,30 @@ Base *Base::generate()
 		default:
 			return 0;
 	}
+}
+
+
+void Base::identify(Base* p)
+{
+	if (dynamic_cast<A*>(p))
+	{
+		std::cout << "this is A class" << std::endl;
+	}
+	else if (dynamic_cast<B*>(p))
+	{
+		std::cout << "this is B class" << std::endl;
+	}
+	else if (dynamic_cast<C*>(p))
+	{
+		std::cout << "this is C class" << std::endl;
+	}
+	else
+	{
+		std::cout << "Unknown object type\n";
+	}
+}
+
+void Base::identify(Base& p)
+{
+	this->identify(&p);
 }

@@ -26,5 +26,5 @@ B& B::operator=(const B& other)
 
 void B::display() const
 {
-	std::cout << "this is the A class" << std::endl;
+	std::cout << "this is the B class" << std::endl;
 }
