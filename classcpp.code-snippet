@@ -3,8 +3,7 @@
     "Generic Class in HPP": {
         "prefix": "classhpp",
         "body": [
-            "#ifndef ${TM_FILENAME_BASE}_HPP",
-            "#define ${TM_FILENAME_BASE}_HPP",
+            "##pragma once",
             "",
             "class ${TM_FILENAME_BASE}",
             "{",
@@ -20,9 +19,7 @@
             "",
             "    // Assignment Operator Overload",
             "    ${TM_FILENAME_BASE}& operator=(const ${TM_FILENAME_BASE}& other);",
-            "};",
-            "",
-            "#endif /* ${TM_FILENAME_BASE}_HPP */"
+            "};"
         ],
         "description": "Create a generic class in a .hpp file with constructor, destructor, copy constructor, and assignment operator overload using the file name as class name"
     },
