@@ -1,10 +1,14 @@
 #pragma once
 
+#include <vector>
+#include <algorithm>
+
 class Span
 {
 private:
 
-	int *SpanArr;
+	std::vector<int>	vec;
+	unsigned int		len;
 
 public:
 	// Constructor

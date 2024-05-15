@@ -2,10 +2,8 @@
 
 Span::Span(unsigned int N)
 {
-	int tmp[N];
-	this->SpanArr = tmp;
+	this->len = N;
 }
-
 Span::~Span()
 {
 	// Destructor implementation
@@ -27,15 +25,18 @@ Span& Span::operator=(const Span& other)
 
 void Span::addNumber(int newN)
 {
-	static int cont;
-	
-
+	if (this->len == this->vec.size())
+		//throw errore
+	this->vec.push_back(newN);
 }
 
 unsigned int Span::shortestSpan()
 {
+	if (this->vec.size() < 2)
+		//throw errore
 }
 
 unsigned int Span::longestSpan()
 {
+
 }
