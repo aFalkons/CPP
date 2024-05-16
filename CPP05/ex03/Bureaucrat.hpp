@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 05:17:32 by afalconi          #+#    #+#             */
-/*   Updated: 2024/03/12 19:29:01 by afalconi         ###   ########.fr       */
+/*   Updated: 2024/05/16 17:59:23 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class AForm;
 class Bureaucrat
 {
 private:
-	std::string	name;
+	const std::string	name;
 	int			grade;
 public:
 	//OCF

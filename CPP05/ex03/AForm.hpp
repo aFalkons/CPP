@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: afalconi <afalconi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 16:36:10 by afalconi          #+#    #+#             */
-/*   Updated: 2024/03/12 16:02:48 by afalconi         ###   ########.fr       */
+/*   Updated: 2024/05/16 17:59:54 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Bureaucrat;
 class AForm
 {
 private:
-	std::string	name;
+	const std::string	name;
 	bool		sig;
 	const int	siggrade;
 	const int	exegrade;

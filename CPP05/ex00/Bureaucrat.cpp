@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+	/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
@@ -6,26 +6,19 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 05:17:41 by afalconi          #+#    #+#             */
-/*   Updated: 2024/04/30 17:31:18 by root             ###   ########.fr       */
+/*   Updated: 2024/05/16 18:14:14 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-
-Bureaucrat::Bureaucrat(/* args */)
-{
-	this->setName("null");
-	this->setGrade(150);
-}
 
 Bureaucrat::~Bureaucrat()
 {
 
 }
 
-Bureaucrat::Bureaucrat(std::string	new_name, int new_grade)
+Bureaucrat::Bureaucrat(std::string	new_name, int new_grade) : name(new_name)
 {
-	this->setName(new_name);
 	try
 	{
 		this->setGrade(new_grade);
@@ -47,11 +40,6 @@ std::string	Bureaucrat::getName(void) const
 	return(this->name);
 }
 
-void		Bureaucrat::setName(std::string new_name)
-{
-	this->name = new_name;
-}
-
 Bureaucrat::Bureaucrat(const Bureaucrat &b)
 {
 	*this = b;
@@ -59,14 +47,17 @@ Bureaucrat::Bureaucrat(const Bureaucrat &b)
 
 Bureaucrat&  Bureaucrat::operator=(const Bureaucrat &b)
 {
-	this->setName(b.getName());
-	try
+	if (this != &b)
 	{
-		this->setGrade(b.getGrade());
-	}
-	catch(std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
+		try
+		{
+			Bureaucrat ret(b.getName(), b.getGrade());
+			*this = ret;
+		}
+		catch(std::exception &e)
+		{
+			std::cout << e.what() << std::endl;
+		}
 	}
 	return(*this);
 }

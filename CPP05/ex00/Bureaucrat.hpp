@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: afalconi <afalconi@student.42roma.it>      +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 05:17:32 by afalconi          #+#    #+#             */
-/*   Updated: 2024/03/10 16:10:04 by afalconi         ###   ########.fr       */
+/*   Updated: 2024/05/16 18:17:29 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 class Bureaucrat
 {
 private:
-	std::string	name;
+	const std::string	name;
 	int			grade;
 public:
 	Bureaucrat(/* args */);
@@ -32,7 +32,6 @@ public:
 
 
 	std::string	getName(void) const;
-	void		setName(std::string new_name);
 
  	int			getGrade(void) const;
 	void		setGrade(int new_grade);
@@ -58,7 +57,6 @@ public:
 			return("Err : Grade Too Low");
 		}
 	};
-
 };
 
 std::ostream&	operator<<(std::ostream &stream, const Bureaucrat &b);
