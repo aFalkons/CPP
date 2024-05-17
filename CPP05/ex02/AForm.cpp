@@ -60,11 +60,6 @@ std::string	AForm::getName() const
 	return(this->name);
 }
 
-void		AForm::setName(std::string new_name)
-{
-	this->name = new_name;
-}
-
 bool		AForm::getSig() const
 {
 	return(this->sig);

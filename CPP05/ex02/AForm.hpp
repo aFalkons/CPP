@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 16:36:10 by afalconi          #+#    #+#             */
-/*   Updated: 2024/05/16 18:00:00 by root             ###   ########.fr       */
+/*   Updated: 2024/05/16 20:03:04 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ public:
 
 	//getter_sette
 	std::string	getName() const;
-	void		setName(std::string new_name);
 
 	bool		getSig() const;
 	void		setSig(bool new_Sig);

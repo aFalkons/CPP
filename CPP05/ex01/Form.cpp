@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 16:36:14 by afalconi          #+#    #+#             */
-/*   Updated: 2024/04/30 17:39:02 by root             ###   ########.fr       */
+/*   Updated: 2024/05/16 19:56:43 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,6 @@ Form&	Form::operator=(const Form &b)
 std::string	Form::getName() const
 {
 	return(this->name);
-}
-
-void		Form::setName(std::string new_name)
-{
-	this->name = new_name;
 }
 
 bool		Form::getSig() const
