@@ -45,21 +45,13 @@ Bureaucrat::Bureaucrat(const Bureaucrat &b)
 	*this = b;
 }
 
-Bureaucrat&  Bureaucrat::operator=(const Bureaucrat &b)
+Bureaucrat& Bureaucrat::operator=(const Bureaucrat &b)
 {
-	if (this != &b)
-	{
-		try
-		{
-			Bureaucrat ret(b.getName(), b.getGrade());
-			*this = ret;
-		}
-		catch(std::exception &e)
-		{
-			std::cout << e.what() << std::endl;
-		}
-	}
-	return(*this);
+    if (this != &b)
+    {
+        this->grade = b.grade;
+    }
+    return *this;
 }
 
 int			Bureaucrat::getGrade(void) const

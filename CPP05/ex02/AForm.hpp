@@ -27,7 +27,7 @@ private:
 public:
 	//OCF
 	AForm(std::string new_name, int min_grade_sig, int min_grade_exe);
-	~AForm();
+	virtual ~AForm();
 	AForm(const AForm &b);
 	AForm&	operator=(const AForm &b);
 

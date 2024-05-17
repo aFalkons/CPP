@@ -57,8 +57,8 @@ int	main(void)
 
 	Intern Bobby;
 
-	Bobby.makeForm("ensomma", "dajeromadaje");
-	Bobby.makeForm("Presidential pardon", "");
+	delete Bobby.makeForm("ensomma", "dajeromadaje");
+	delete Bobby.makeForm("Presidential pardon", "");
 
 	return(0);
 }
